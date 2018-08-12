@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<style type="text/css">
+input{border:1px solid red;background-color:transparent;}
+</style>
+</head>
+<body style="margin: 0">
+<header style="display:flex;width:100%; height:40px;background:#3388FF;">
+    <h4 style="position: relative;left: 37%;top:-15%;">发帖</h4>
+</header>
+<div >
+    <div  style="margin-top:15px;">
+        <input id="title" name="title" style="border: 0px;font-size:23px;" type="text" placeholder="标题"/>
+    </div>
+
+
+    <div style="text-align: center;margin-top:15px;">
+        <textarea id="conn" name="conn" rows="25" cols="40" placeholder="内容"/></textarea>
+    </div>
+
+    <button type="button"  style="margin-top:0px;" onclick="showprof()">选择专家</button>
+    <div class="hui-form-radios" id="fcb"></div>
+
+
+</div>
+<script>
+var pro = "";
+    var vals = new Array();
+    function showprof(){
+        $.ajax({
+            type: "GET",
+            url: "http://39.104.27.39:8995/showprof/",
+            dataType:'json',
+            success: function(data){
+                var hdata = data.proname;
+                var html = '';
+                for(var i = 0; i < hdata.length; i++){
+                    html += '<input type="checkbox" value="'+hdata[i]+'" name="test" id="'+hdata[i]+'" onchange="showCheckRes(this);" /><label for="'+hdata[i]+'">'+hdata[i]+'</label>';
+                }
+                document.getElementById("fcb").innerHTML=html;
+            }
+        });
+    }
+
+    function showCheckRes(_selfBtn){
+        vals = [];
+        var obj = document.getElementsByName("test");
+        for(var k in obj){
+            if(obj[k].checked)
+                vals.push(obj[k].value);
+        }
+
+    }
+
+function submittz(name){
+    var title = document.getElementById('title').value;
+	var conn = document.getElementById('conn').value;
+	pro = vals.join(",");
+    $.ajax({
+                type: "POST",
+                url: "http://39.104.27.39:8995/receti/",
+                dataType:'json',
+                data: {title:title, content:conn,username:name,profs:pro},
+                success: function(data){
+
+                }
+            });
+}
+</script>
+</body>
+</html>

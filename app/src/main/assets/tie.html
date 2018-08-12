@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+<h3 id="tt" style="text-align:center"></h3>
+<span id="username">楼主：</span>
+<div style="margin: 3px;font-size:20px" id="cont"></div>
+
+<span style="font-size: 15px;">全部回复</span>
+
+<div  style="margin-top:-20px;">
+    <ul id="list" style="list-style-type:none;position: absolute;left: -30px;">
+
+    </ul>
+</div>
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+
+window.onload=function(){
+   window.kotjs.sendrequesturl();
+}
+    function s(surl) {
+        $.ajax({
+                type: "GET",
+                url: surl,
+                dataType:'json',
+                success: function(data){
+                    document.getElementById("tt").innerHTML=data.title;
+                    document.getElementById('cont').innerHTML=data.content;
+                    document.getElementById('username').innerHTML+=data.username;
+                }
+            });
+    }
+    function d(hurl) {
+    var ul = document.getElementById("list");
+        $.ajax({
+                type: "GET",
+                url: hurl,
+                dataType:'json',
+                success: function(data){
+                    var hdata = data.comment;
+                    var oLi;
+                    for(var i = hdata.length-1; i >= 0; i--){
+                            oLi=document.createElement('li');
+                            oLi.innerHTML= '<div style="font-size: 18px;">'+hdata[i].username+":&nbsp&nbsp"+hdata[i].comm+'</div>';
+                            ul.appendChild(oLi);
+                    }
+                }
+            });
+    }
+
+
+
+</script>
+</html>

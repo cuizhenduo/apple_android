@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+
+    <div  style="margin-top:15px;">
+        <span>对帖子进行回复</span>
+    </div>
+    <div style="text-align: center;">
+        <textarea id="conn" name="conn" rows="35" cols="40" /></textarea>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+
+/*window.onload=function(){
+   window.kotjs.sendrequesturl();
+}*/
+    function s(id,name) {
+        var res = document.getElementById('conn').value;
+        $.ajax({
+                type: "POST",
+                url: "http://39.104.27.39:8995/recehuifu/",
+                dataType:'json',
+                data: {username:name, comm:res,id:id},
+                success: function(data){
+                    if(data=='ok'){
+                        window.kotjs.tishi()
+				    }
+                }
+            });
+    }
+
+
+
+
+</script>
+</html>

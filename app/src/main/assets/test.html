@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 id="tt" ></h1>
+<div style="margin: 3px" id="cont">
+
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+var con = "";
+window.onload=function(){
+   window.kotjs.sendrequesturl();
+}
+    function s(surl) {
+        //document.getElementById("cont").innerHTML=s.toString();
+        $.ajax({
+                type: "GET",
+                url: surl,
+                dataType:'json',
+                success: function(data){
+                if(data.article.indexOf("http:\/\/39.104.27.39:8995") > 0 ){
+                    con = data.article;
+                }else{
+                    con = data.article.replace(/\/upload/g, "http://39.104.27.39:8995/upload");
+                }
+                    document.getElementById("tt").innerHTML=data.title;
+                    con = con.replace(/img/g, "img width = \"390px\"");
+                    con = con.replace(/font-size:32px/g, "font-size:20px");
+                    con = con.replace(//g, "")
+                    document.getElementById('cont').innerHTML=con;
+                }
+            });
+    }
+
+
+
+</script>
+</html>
