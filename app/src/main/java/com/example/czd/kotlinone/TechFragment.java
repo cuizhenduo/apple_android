@@ -4,21 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
 
 
 public class TechFragment extends Fragment {
@@ -34,10 +26,7 @@ public class TechFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //Intent intent = new Intent(getActivity(),Main2Activity.class);
-                //startActivity(intent);
-
-                Intent intent = new Intent();
+        Intent intent = new Intent();
                 intent.putExtra("mark", data[position]);
                 intent.setClass(getActivity(), Main2Activity.class);
                 getActivity().startActivity(intent);

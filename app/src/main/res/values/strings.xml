@@ -4,7 +4,7 @@
     <array name="tab_main_title">
         <item>主页</item>
         <item>技术</item>
-        <item>社区</item>
+        <item>咨询</item>
         <item>我的</item>
     </array>
     <string name="title_activity_login">Sign in</string>

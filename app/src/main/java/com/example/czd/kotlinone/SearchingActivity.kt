@@ -23,7 +23,7 @@ class SearchingActivity : AppCompatActivity() {
 
         tl_head.setNavigationIcon(R.drawable.back_32)
         tl_head.setBackgroundResource(R.color.colorPrimaryDark)
-        tl_head.title = "智慧苹果"
+        tl_head.title = "苹果矮密栽培技术"
 
         stsea.setOnClickListener {
             var seacon = seaobj.text

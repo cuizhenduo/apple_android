@@ -3,10 +3,6 @@ package com.example.czd.kotlinone.adapter;
 import android.support.v4.app.*;
 import android.view.ViewGroup;
 
-/**
- * <p>主页fragment 适配器</p>
- * Created by Jarek(王健) on 2016-3-10
- */
 public class TabFragmentAdapter extends FragmentPagerAdapter {
 
     private Fragment[] fragments;

@@ -10,9 +10,9 @@ import com.example.czd.kotlinone.adapter.UrlListAdapter
 import com.example.czd.util.SQLiteDbHelper
 import kotlinx.android.synthetic.main.activity_record.*
 import org.jetbrains.anko.startActivity
-
+lateinit var urlLists: MutableList<UrlList>
 class RecordActivity : AppCompatActivity() {
-    internal var urlLists: MutableList<UrlList> = java.util.ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_record)

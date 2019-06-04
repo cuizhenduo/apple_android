@@ -10,11 +10,6 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
-/**
- * <p>tab 容器</p>
- * Created by Jarek(王健) 2016/3/10.
- */
 public class TabContainerView extends LinearLayout {
 
     private ViewPager mViewPager;

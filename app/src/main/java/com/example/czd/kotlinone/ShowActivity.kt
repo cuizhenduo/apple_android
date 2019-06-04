@@ -17,7 +17,7 @@ import java.io.IOException
 import java.io.InputStreamReader
 import java.net.HttpURLConnection
 import java.net.URL
-//import javax.swing.UIManager.put
+
 import android.content.ContentValues
 
 
@@ -32,7 +32,7 @@ class ShowActivity : AppCompatActivity() {
 
         tl_head.setNavigationIcon(R.drawable.back_32)
         tl_head.setBackgroundResource(R.color.gray)
-        tl_head.title = "智慧苹果"
+        tl_head.title = "苹果矮密栽培技术"
 
         var bundle = intent.extras
         val id = bundle.getString("pid");

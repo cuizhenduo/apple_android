@@ -24,7 +24,7 @@ class RecordShowActivity : AppCompatActivity() {
 
         tl_head.setNavigationIcon(R.drawable.back_32)
         tl_head.setBackgroundResource(R.color.gray)
-        tl_head.title = "智慧苹果"
+        tl_head.title = "苹果矮密栽培技术"
 
         var bundle = intent.extras
         surl = bundle.getString("surl");

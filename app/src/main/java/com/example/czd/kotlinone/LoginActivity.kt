@@ -2,8 +2,6 @@ package com.example.czd.kotlinone
 
 
 import android.content.Context
-import android.content.Intent
-
 import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -12,7 +10,6 @@ import okhttp3.FormBody
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
-import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
@@ -26,7 +23,7 @@ class LoginActivity : AppCompatActivity(){
 
         tl_head.setNavigationIcon(R.drawable.back_32)
         tl_head.setBackgroundResource(R.color.gray)
-        tl_head.title = "智慧苹果"
+        tl_head.title = "苹果矮密栽培技术"
 
         iden.setOnCheckedChangeListener { group, checkedId ->
             shenfen = when(checkedId){
